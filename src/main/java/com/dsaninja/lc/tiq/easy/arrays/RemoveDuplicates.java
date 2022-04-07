@@ -24,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class RemoveDuplicates{
 
-    public int removeDuplicates(int[] nums) {
+    public int removeDuplicates(int[] nums){
         // with this check the solution beats 100% of the java submissions
         if(nums.length == 1){
             return 1;
@@ -32,7 +32,7 @@ public class RemoveDuplicates{
 
         int lastUniqueNumber = Integer.MIN_VALUE;
         int slot = 0;
-        for(int element: nums){
+        for(int element : nums){
             if(element != lastUniqueNumber){
                 lastUniqueNumber = element;
                 nums[slot++] = element;
@@ -40,6 +40,15 @@ public class RemoveDuplicates{
         }
 
         // slot is expected to be 1 index based per question
+        return slot;
+    }
+
+    public int removeDuplicatesV2(int[] nums){
+        int slot = 0;
+        for(int element : nums)
+            if(slot == 0 || element > nums[slot - 1]){
+                nums[slot++] = element;
+            }
         return slot;
     }
 
@@ -53,7 +62,21 @@ public class RemoveDuplicates{
     @Test
     @DisplayName("test removing duplicates when the array contains duplicate elements - v2")
     public void testWithDuplicateElementsV2(){
-        int index = removeDuplicates(new int[]{0,0,1,1,1,2,2,3,3,4});
+        int index = removeDuplicates(new int[]{0, 0, 1, 1, 1, 2, 2, 3, 3, 4});
+        assertEquals(5, index);
+    }
+
+    @Test
+    @DisplayName("test removing duplicates when the array contains duplicate elements - v3")
+    public void testWithDuplicateElementsV3(){
+        int index = removeDuplicatesV2(new int[]{1, 1, 2});
+        assertEquals(2, index);
+    }
+
+    @Test
+    @DisplayName("test removing duplicates when the array contains duplicate elements - v4")
+    public void testWithDuplicateElementsV4(){
+        int index = removeDuplicatesV2(new int[]{0, 0, 1, 1, 1, 2, 2, 3, 3, 4});
         assertEquals(5, index);
     }
 }
