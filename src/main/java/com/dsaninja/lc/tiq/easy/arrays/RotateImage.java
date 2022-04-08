@@ -1,5 +1,10 @@
 package com.dsaninja.lc.tiq.easy.arrays;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 /**
  * You are given an n x n 2D matrix representing an image,
  * rotate the image by 90 degrees (clockwise).
@@ -31,26 +36,39 @@ public class RotateImage{
      * @param matrix
      */
     public void rotate(int[][] matrix){
-        for(int i = 0; i < matrix.length; i++){
+        transpose(matrix);
+        reverse(matrix);
+
+    }
+
+    private void transpose(int[][] matrix){
+        for(int i = 0 ; i < matrix.length; i++){
             for(int j = i+1; j < matrix[0].length; j++){
                 int temp = matrix[i][j];
                 matrix[i][j] = matrix[j][i];
                 matrix[j][i] = temp;
             }
         }
-
-        for(int[] ints : matrix){
-            reverse(ints);
-        }
-
     }
 
-    private void reverse(int[] nums){
-        int start = 0, end = nums.length - 1;
-        while(start < end){
-            int temp = nums[start];
-            nums[start++] = nums[end];
-            nums[end--] = temp;
+    private void reverse(int[][] matrix){
+        for(int i = 0 ; i < matrix.length; i++){
+            int start = 0; int end = matrix.length -1;
+
+            while(start < end){
+                int temp = matrix[i][start];
+                matrix[i][start++] = matrix[i][end];
+                matrix[i][end--] = temp;
+            }
         }
+    }
+
+    @Test
+    @DisplayName("test array rotation for 2D matrix")
+    public void testRotation(){
+        int[][] ip = new int[][]{{1,2,3}, {4,5,6},{7,8,9}};
+        rotate(ip);
+
+        assertArrayEquals(new int[][]{{7,4,1}, {8,5,2},{9,6,3}}, ip);
     }
 }

@@ -1,5 +1,10 @@
 package com.dsaninja.lc.tiq.easy.strings;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 /**
  * Write a function that reverses a string. The input string is given
  * as an array of characters s.
@@ -20,5 +25,14 @@ public class ReverseString{
             s[start++] = s[end];
             s[end--] = temp;
         }
+    }
+
+    @Test
+    @DisplayName("test reversing a string")
+    public void testReverseString(){
+        char[] ip = "dsaninja".toCharArray();
+        reverseString(ip);
+
+        assertArrayEquals(new StringBuilder("dsaninja").reverse().toString().toCharArray(), ip);
     }
 }
