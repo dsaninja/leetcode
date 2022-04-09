@@ -1,4 +1,4 @@
-package com.dsaninja.lc.practice;
+package com.dsaninja.lc.dailychallenge;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
