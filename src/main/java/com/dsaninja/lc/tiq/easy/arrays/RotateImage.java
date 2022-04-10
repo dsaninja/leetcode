@@ -28,12 +28,14 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 public class RotateImage{
 
     /**
+     * The algorithm is based on following two steps:
+     *
      * <ol>
-     *     <li>row to col</li>
-     *     <li>reverse</li>
+     *     <li>Transpose: row to col</li>
+     *     <li>reverse row wise</li>
      * </ol>
      *
-     * @param matrix
+     * @param matrix input matrix
      */
     public void rotate(int[][] matrix){
         transpose(matrix);
