@@ -93,7 +93,10 @@ public class GameOfLife{
                 // <= operator to include diagonals
                 for(int i = top; i <= bottom; i++){
                     for(int j = left; j <= right; j++){
-                        if(!(i == row && j == col) && Math.abs(board[i][j]) == 1){
+                        // if not same cell
+                        if(!(i == row && j == col) &&
+                                // if original 1 or updated -1
+                                Math.abs(board[i][j]) == 1){
                             liveNeighbours++;
                         }
                     }
