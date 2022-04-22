@@ -18,7 +18,8 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
  * Input: digits = [9]
  * Output: [1,0]
  * </pre>
- * https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/559/
+ *
+ * <a href="https://leetcode.com/problems/plus-one/">Problem-66</a>
  */
 public class PlusOne{
     public int[] plusOne(int[] digits){

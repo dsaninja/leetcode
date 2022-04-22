@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *
  * You must implement a solution with a linear runtime complexity and use only constant extra space.
  *
- * https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/549/
+ * <a href="https://leetcode.com/problems/single-number/">Problem-136</a>
  */
 public class SingleNumber {
     public int singleNumber(int[] nums) {

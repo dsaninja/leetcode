@@ -18,7 +18,8 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
  * rotate 3 steps to the right: [5,6,7,1,2,3,4]
  * </pre>
  * <p>
- * https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/646/
+ *
+ * <a href="https://leetcode.com/problems/rotate-array/">Problem-189</a>
  */
 public class RotateArray{
     public int[] rotate(int[] nums, int k){

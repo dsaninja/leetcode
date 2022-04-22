@@ -23,7 +23,8 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
  *
  * </pre>
  * <p>
- * https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/770/
+ *
+ * <a href="https://leetcode.com/problems/rotate-image/solution/">Problem-48</a>
  */
 public class RotateImage{
 

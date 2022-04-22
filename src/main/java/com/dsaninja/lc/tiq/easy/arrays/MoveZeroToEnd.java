@@ -18,7 +18,8 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
  * Output: [1,3,12,0,0]
  * </pre>
  * <p>
- * https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/567/
+ *
+ * <a href="https://leetcode.com/problems/move-zeroes/">Problem-283</a>
  */
 public class MoveZeroToEnd{
 

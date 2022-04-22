@@ -22,7 +22,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Total profit is 4 + 3 = 7.
  * </pre>
  * <p>
- * https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/564/
+ *
+ * <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/">Problem-122</a>
  */
 public class BestTimeToBuyAndSellStocks{
     public int maxProfit(int[] prices){

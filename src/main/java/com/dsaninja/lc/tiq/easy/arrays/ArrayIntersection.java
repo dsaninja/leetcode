@@ -21,7 +21,8 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
  * Input: nums1 = [1,2,2,1], nums2 = [2,2]
  * Output: [2,2]
  * <p>
- * https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/674/
+ *
+ * <a href="https://leetcode.com/problems/intersection-of-two-arrays-ii/">Problem-350</a>
  */
 public class ArrayIntersection{
     public int[] intersect(int[] nums1, int[] nums2){

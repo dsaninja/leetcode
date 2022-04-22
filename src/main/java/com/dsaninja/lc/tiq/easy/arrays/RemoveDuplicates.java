@@ -20,7 +20,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * <p>
  * Return k after placing the final result in the first k slots of nums.
  * <p>
- * https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/727/
+ *
+ * <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/">Problem-26</a>
  */
 public class RemoveDuplicates{
 
