@@ -17,7 +17,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Output: 2
  *
  * <p>
- * https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/881/
+ *
+ * <a href="https://leetcode.com/problems/first-unique-character-in-a-string/">Problem-387</a>
  */
 public class FirstUniqueCharacter{
     public int firstUniqChar(String input) {

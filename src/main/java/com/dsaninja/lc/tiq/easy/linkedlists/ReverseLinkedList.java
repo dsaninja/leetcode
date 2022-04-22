@@ -6,6 +6,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+/**
+ * Given the head of a singly linked list, reverse the list, and return the
+ * reversed list.
+ *
+ * <a href="https://leetcode.com/problems/reverse-linked-list/">Problem-206</a>
+ */
 public class ReverseLinkedList {
     private static class ListNode {
         int val;

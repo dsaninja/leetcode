@@ -11,7 +11,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * A binary tree's maximum depth is the number of nodes along the
  * longest path from the root node down to the farthest leaf node.
  * <p>
- * https://leetcode.com/explore/interview/card/top-interview-questions-easy/94/trees/555/
+ *
+ * <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/">Problem-104</a>
  */
 public class MaximumDepth {
 

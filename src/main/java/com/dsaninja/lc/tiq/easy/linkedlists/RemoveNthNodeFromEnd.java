@@ -9,7 +9,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Given the head of a linked list, remove the nth node from
  * the end of the list and return its head.
  * <p>
- * https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/603/
+ *
+ * <a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/">Problem-19</a>
  */
 public class RemoveNthNodeFromEnd {
     private static class ListNode {

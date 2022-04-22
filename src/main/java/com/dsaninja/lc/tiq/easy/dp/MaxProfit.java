@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * <p>
  * Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
  * <p>
- * https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solution/
+ * <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">Problem-121</a>
  */
 public class MaxProfit {
 

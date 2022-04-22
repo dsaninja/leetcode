@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
  * Output: ["o","l","l","e","h"]
  * </pre>
  *
- * https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/879/
+ * <a href="https://leetcode.com/problems/reverse-string/">Problem-344</a>
  */
 public class ReverseString{
     public void reverseString(char[] s){

@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * <p>
  * Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
  * <p>
- * https://leetcode.com/explore/interview/card/top-interview-questions-easy/97/dynamic-programming/569/
+ * <a href="https://leetcode.com/problems/climbing-stairs/">Problem-70</a>
  */
 public class ClimbingStairs {
     public int climbStairs(int n) {

@@ -14,7 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * An Anagram is a word or phrase formed by rearranging the letters of a different
  * word or phrase, typically using all the original letters exactly once.
  * <p>
- * https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/882/
+ *
+ * <a href="https://leetcode.com/problems/valid-anagram/">Problem-242</a>
  */
 public class ValidAnagram{
     public boolean isAnagram(String s, String t) {

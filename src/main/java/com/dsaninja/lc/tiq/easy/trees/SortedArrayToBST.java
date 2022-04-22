@@ -11,7 +11,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * A height-balanced binary tree is a binary tree in which the depth
  * of the two subtrees of every node never differs by more than one.
  * <p>
- * https://leetcode.com/explore/interview/card/top-interview-questions-easy/94/trees/631/
+ *
+ * <a href="https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/">Problem-108</a>
  */
 public class SortedArrayToBST {
     public TreeNode sortedArrayToBST(int[] nums) {

@@ -4,7 +4,8 @@ package com.dsaninja.lc.tiq.easy.trees;
  * Given the root of a binary tree, check whether it is a mirror of itself
  * (i.e., symmetric around its center).
  * <p>
- * https://leetcode.com/explore/interview/card/top-interview-questions-easy/94/trees/627/
+ *
+ * <a href="https://leetcode.com/problems/symmetric-tree/">Problem-101</a>
  */
 public class SymmetricTree {
     // left of left should be equal to right of right

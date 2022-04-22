@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Given the root of a binary tree, return the level order traversal of its nodes'
  * values. (i.e., from left to right, level by level).
  *
- * https://leetcode.com/explore/interview/card/top-interview-questions-easy/94/trees/628/
+ * <a href="https://leetcode.com/problems/binary-tree-level-order-traversal/">Problem-102</a>
  */
 public class BSTLevelOrderTraversal {
     public List<List<Integer>> levelOrder(TreeNode root) {
