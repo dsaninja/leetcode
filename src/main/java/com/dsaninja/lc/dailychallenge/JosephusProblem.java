@@ -18,14 +18,28 @@ public class JosephusProblem{
         // so f(n,k) can be represented as f(n-1, k) ...
 
         // After the k-th person is killed, a circle of n − 1 remains,
-        // and the next count is started with the person whose number
-        // in the original problem was ( k mod n ) + 1.
-        // The position of the survivor in the remaining circle would be
-        // f(n-1,k) if counting is started at 1;
+        // and the person who was originally at k+1 position
+        // is now at kth position to start the next iteration
 
-        // shifting this to account for the fact that the starting point
-        // is ( k mod n ) + 1 yields the recurrence:
-        // f(n,k) = ((f(n-1,k)+k-1) mod n) + 1, with f(1,k)=1
+        // hence the recurrence rel can be defined as:
+        // f(n,k) = f(n-1,k) + k
+
+        // for a zero index based array, kth person is actually
+        // at k-1 index, so re-writing it for 0 based index:
+        // f(n,k) = f(n-1,k) + k -1
+
+        // but here is a problem, with n decreasing by 1 in
+        // every iteration and k (or k-1) remaining same,
+        // after some number of iterations, k will be more than
+        // n and hence when finding kth person in n size array,
+        // we may go out of bound; to solve this lets re-write it
+        // using mod
+        // f(n,k) = (f(n-1,k) + k -1) mod n
+
+        // now this will give us a solution for 0 index based
+        // array; to match it again with 1 based numbers in input
+        // let's add 1
+        // f(n,k) = ((f(n-1,k) + k -1) mod n) + 1
 
         // which takes the simpler form
         // g(n,k) = ((g(n-1,k)+k) mod n), with g(1,k)=0
