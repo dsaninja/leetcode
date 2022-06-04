@@ -2,7 +2,7 @@ package com.dsaninja.lc.arrays101;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -37,19 +37,19 @@ public class ThirdMaximum{
             // that max 3 values in the current window are
             // present in the set
             if(max.size() > 3){
-                max.remove(max.stream().min(Comparator.naturalOrder()).get());
+                max.remove(Collections.min(max));
             }
         }
 
         // from the max three values in set
         // if size < 3, return max value
         if(max.size() < 3){
-            return max.stream().max(Comparator.naturalOrder()).get();
+            return Collections.max(max);
         }
         // otherwise return min value which will be
         // min of max 3 values i.e. 3rd max
         else{
-            return max.stream().min(Comparator.naturalOrder()).get();
+            return Collections.min(max);
         }
     }
 
