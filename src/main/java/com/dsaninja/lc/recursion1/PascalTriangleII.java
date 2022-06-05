@@ -4,7 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -23,11 +25,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PascalTriangleII{
     public List<Integer> getRow(int rowIndex){
         List<List<Integer>> rows = new ArrayList<>();
-        rows.add(Arrays.asList(1));
+        rows.add(List.of(1));
 
         // first row already added so index start from 2
         // till rowIndex
-        for(int rowNum = 2; rowNum <= rowIndex; rowNum++){
+        for(int rowNum = 1; rowNum <= rowIndex; rowNum++){
             List<Integer> prev = rows.get(rows.size() - 1);
             List<Integer> row = new ArrayList<>();
 
@@ -37,9 +39,7 @@ public class PascalTriangleII{
             // as we need top and top-1 values
             // start inner loop from 1 (to include 0
             // index from prev row)
-            // this will go till rowNum - 2 like for 2nd row
-            // this loop should not anything
-            for(int j =1; j < rowNum-1; j++){
+            for(int j =1; j < rowNum; j++){
                 row.add(prev.get(j) + prev.get(j-1));
             }
 
@@ -50,44 +50,82 @@ public class PascalTriangleII{
             rows.add(row);
         }
 
-        return rows.get(rowIndex-1);
+        return rows.get(rowIndex);
     }
 
+
+    record RowCol(int row, int col){}
+    private final Map<RowCol, Integer> cache = new HashMap<>();
+
+    public List<Integer> getRowViaCache(int rowIndex){
+        List<Integer> result = new ArrayList<>();
+        for(int i = 0; i <= rowIndex; i++){
+            result.add(getOrCalculate(rowIndex, i));
+        }
+
+        return result;
+    }
+
+    private int getOrCalculate(int row, int col){
+        RowCol rowCol = new RowCol(row, col);
+        if(cache.containsKey(rowCol)){
+            return cache.get(rowCol);
+        }
+
+        if(row == 0 || col ==0 || row == col){
+            return 1;
+        }
+
+        int result = getOrCalculate(row-1, col-1) + getOrCalculate(row-1, col);
+        cache.put(rowCol, result);
+
+        return result;
+    }
+
+
+    // *********** time limit exceeds ************
     public List<Integer> getRowRec(int rowIndex){
-        return rec(Arrays.asList(1), rowIndex-1);
-    }
-
-    private List<Integer> rec(List<Integer> asList, int rowIndex){
-        if(rowIndex == 0){
-            return asList;
+        List<Integer> result = new ArrayList<>();
+        for(int i = 0; i <= rowIndex; i++){
+            result.add(calculate(rowIndex, i));
         }
 
-        List<Integer> row = new ArrayList<>();
-        row.add(1);
-
-        for(int i=1; i < asList.size(); i++){
-            row.add(asList.get(i) + asList.get(i-1));
-        }
-        row.add(1);
-
-        return rec(row, rowIndex-1);
+        return result;
     }
+
+    private int calculate(int row, int col){
+        if(row == 0 || col ==0 || row == col){
+            return 1;
+        }
+
+        return calculate(row-1, col-1) + calculate(row-1, col);
+    }
+    // *********** time limit exceeds ************
 
     @Test
     public void testPascalTriangle(){
-        assertEquals(Arrays.asList(1), getRow(1));
-        assertEquals(Arrays.asList(1,1), getRow(2));
-        assertEquals(Arrays.asList(1,2,1), getRow(3));
-        assertEquals(Arrays.asList(1,3,3,1), getRow(4));
-        assertEquals(Arrays.asList(1,4,6,4,1), getRow(5));
+        assertEquals(Arrays.asList(1), getRow(0));
+        assertEquals(Arrays.asList(1,1), getRow(1));
+        assertEquals(Arrays.asList(1,2,1), getRow(2));
+        assertEquals(Arrays.asList(1,3,3,1), getRow(3));
+        assertEquals(Arrays.asList(1,4,6,4,1), getRow(4));
     }
 
     @Test
     public void testPascalTriangleRec(){
-        assertEquals(Arrays.asList(1), getRowRec(1));
-        assertEquals(Arrays.asList(1,1), getRowRec(2));
-        assertEquals(Arrays.asList(1,2,1), getRowRec(3));
-        assertEquals(Arrays.asList(1,3,3,1), getRowRec(4));
-        assertEquals(Arrays.asList(1,4,6,4,1), getRowRec(5));
+        assertEquals(Arrays.asList(1), getRowRec(0));
+        assertEquals(Arrays.asList(1,1), getRowRec(1));
+        assertEquals(Arrays.asList(1,2,1), getRowRec(2));
+        assertEquals(Arrays.asList(1,3,3,1), getRowRec(3));
+        assertEquals(Arrays.asList(1,4,6,4,1), getRowRec(4));
+    }
+
+    @Test
+    public void testPascalTriangleCached(){
+        assertEquals(Arrays.asList(1), getRowViaCache(0));
+        assertEquals(Arrays.asList(1,1), getRowViaCache(1));
+        assertEquals(Arrays.asList(1,2,1), getRowViaCache(2));
+        assertEquals(Arrays.asList(1,3,3,1), getRowViaCache(3));
+        assertEquals(Arrays.asList(1,4,6,4,1), getRowViaCache(4));
     }
 }
