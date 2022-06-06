@@ -25,6 +25,24 @@ public class MergeTwoSortedLists{
         }
     }
 
+    public ListNode mergeTwoListsRec(ListNode list1, ListNode list2){
+        if(null == list1){
+            return list2;
+        }
+
+        if(null == list2){
+            return list1;
+        }
+
+        if(list1.val < list2.val){
+            list1.next = mergeTwoLists(list1.next, list2);
+            return list1;
+        }else{
+            list2.next = mergeTwoLists(list1, list2.next);
+            return list2;
+        }
+    }
+
     public ListNode mergeTwoLists(ListNode list1, ListNode list2){
         ListNode dummy = new ListNode(-1);
         ListNode itr = dummy;
@@ -71,6 +89,29 @@ public class MergeTwoSortedLists{
         assertEquals(11, result.next.next.val);
         assertEquals(20, result.next.next.next.val);
         assertNull(result.next.next.next.next);
+
+    }
+
+    @Test
+    public void testMergeRec(){
+        ListNode one = new ListNode(6);
+        ListNode two = new ListNode(20);
+
+        ListNode three = new ListNode(3);
+        ListNode four = new ListNode(11);
+
+        one.next = two;
+        two.next = null;
+        three.next = four;
+        four.next = null;
+
+        ListNode result = mergeTwoListsRec(one, three);
+        assertEquals(3, result.val);
+        assertEquals(6, result.next.val);
+        assertEquals(11, result.next.next.val);
+        assertEquals(20, result.next.next.next.val);
+        assertNull(result.next.next.next.next);
+
 
     }
 }
