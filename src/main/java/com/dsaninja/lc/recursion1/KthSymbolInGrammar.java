@@ -43,13 +43,13 @@ public class KthSymbolInGrammar{
      * <ol>
      *  <li>If parent is 0:</li>
      *     <ol>
-     *      <li>for even value of k -> 0</li>
-     *      <li>for odd value of k -> 1</li>
+     *      <li>for even value of k -> 1</li>
+     *      <li>for odd value of k -> 0</li>
      *     </ol>
      *  <li>If parent is 1:</li>
      *     <ol>
-     *       <li>for even value of k -> 1</li>
-     *       <li>for odd value of k -> 0</li>
+     *       <li>for even value of k -> 0</li>
+     *       <li>for odd value of k -> 1</li>
      *     </ol>
      * </ol>
      *
