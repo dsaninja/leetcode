@@ -18,7 +18,7 @@ package com.dsaninja.lc.arrays101;
  */
 public class MergeSortedArrays{
 
-    public void mergeV2(int[] nums1, int m, int[] nums2, int n) {
+    public void mergeV2(int[] nums1, int m, int[] nums2, int n){
         // if any one of the arrays is blank, return
         if(nums1.length == 0 || nums2.length == 0) return;
         int indexOne = 0;
@@ -39,7 +39,7 @@ public class MergeSortedArrays{
                 while(indexTwo < n && nums2[indexTwo] < nums2[indexTwo - 1]){
                     temp = nums2[indexTwo];
                     nums2[indexTwo] = nums2[indexTwo - 1];
-                    nums2[indexTwo -1] = temp;
+                    nums2[indexTwo - 1] = temp;
                     indexTwo++;
                 }
             }
@@ -50,34 +50,36 @@ public class MergeSortedArrays{
         System.arraycopy(nums2, 0, nums1, m, nums2.length);
     }
 
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
-        int maxValueIndexInFirstArray = m-1;
-        int maxValueIndexInSecondArray = n-1;
+    public void merge(int[] nums1, int m, int[] nums2, int n){
+        int index = nums1.length - 1;
+        int oneIndex = m - 1;
+        int twoIndex = n - 1;
 
-        int maxValueIndexInResult = nums1.length -1;
+        // starting from end of num1, iterate while
+        // all the slots are not filled
+        while(index >= 0){
 
-        // starting from the end of result i.e. nums1 array
-        while(maxValueIndexInResult >= 0){
-
-            // the below-mentioned else condition simply
-            // decrements the variable by 1, so before
-            // we check anything, lets first validate the index
-            if(maxValueIndexInSecondArray < 0){
+            // as nums2 is smaller than nums1
+            // checks if its already covered and break
+            if(twoIndex < 0){
                 break;
             }
 
-            // if last value in array1 is greater than last value in second array
-            if(maxValueIndexInFirstArray >= 0 && nums1[maxValueIndexInFirstArray] > nums2[maxValueIndexInSecondArray]){
-                // use that one and reduce corresponding index.
-                nums1[maxValueIndexInResult] = nums1[maxValueIndexInFirstArray];
-                maxValueIndexInFirstArray--;
-            }else{
-                // else use value from array2 and reduce its index
-                nums1[maxValueIndexInResult] = nums2[maxValueIndexInSecondArray];
-                maxValueIndexInSecondArray--;
-            }
+            // if there is an empty slot in nums1
+            // and nums1 has larger value
+            // use value from nums1
+            if(oneIndex >= 0 && nums1[oneIndex] > nums2[twoIndex]){
+                nums1[index] = nums1[oneIndex];
+                oneIndex--;
+            } else{
 
-            maxValueIndexInResult--;
+                // either nums1 does not have a valid candidate
+                // or nums2 has larger value
+                // in both the cases, use nums2
+                nums1[index] = nums2[twoIndex];
+                twoIndex--;
+            }
+            index--;
         }
     }
 }
