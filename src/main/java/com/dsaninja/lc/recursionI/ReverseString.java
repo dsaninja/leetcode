@@ -1,4 +1,4 @@
-package com.dsaninja.lc.recursion1;
+package com.dsaninja.lc.recursionI;
 
 import org.junit.jupiter.api.Test;
 

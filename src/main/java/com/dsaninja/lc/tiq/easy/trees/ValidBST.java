@@ -23,6 +23,10 @@ public class ValidBST{
     // larger than the node but all the elements in the right subtree.
     // That means one should keep both upper and lower limits for each node while traversing the tree,
     // and compare the node value not with children values but with these limits.
+    //      5
+    //    1    6
+    //       4   7
+    // all subtree are valid in themselves but 4 should be in left of 5
     public boolean bstHelper(TreeNode root, Integer low, Integer max){
         if(null == root){
             return true;

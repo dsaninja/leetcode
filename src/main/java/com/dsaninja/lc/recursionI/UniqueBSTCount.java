@@ -1,4 +1,4 @@
-package com.dsaninja.lc.recursion1;
+package com.dsaninja.lc.recursionI;
 
 /**
  * Given an integer n, return the number of structurally unique BST's
