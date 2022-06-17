@@ -35,10 +35,10 @@ public class DeleteOperationForTwoStrings{
         int m = word1.length();
         int n = word2.length();
 
-        return m + n - 2 * calculate(word1, word2, m, n);
+        return m + n - 2 * calculateLongestCommonSubstring(word1, word2, m, n);
     }
 
-    private int calculate(String word1, String word2, int m, int n){
+    private int calculateLongestCommonSubstring(String word1, String word2, int m, int n){
         if(m == 0 || n == 0){
             return 0;
         }
@@ -47,7 +47,7 @@ public class DeleteOperationForTwoStrings{
         // lengths since the last characters have already been considered and
         // add 1 to the result to be returned for strings of 1 lesser lengths.
         if(word1.charAt(m - 1) == word2.charAt(n - 1)){
-            return 1 + calculate(word1, word2, m - 1, n - 1);
+            return 1 + calculateLongestCommonSubstring(word1, word2, m - 1, n - 1);
         }
 
         // If the last characters don't match, we have two options,
@@ -56,7 +56,8 @@ public class DeleteOperationForTwoStrings{
         // second last character of s2 and the last character of s1.
         // We need to consider the larger result obtained out of the two
         // considerations for getting the required length.
-        return Math.max(calculate(word1, word2, m - 1, n), calculate(word1, word2, m, n - 1));
+        return Math.max(calculateLongestCommonSubstring(word1, word2, m - 1, n),
+                        calculateLongestCommonSubstring(word1, word2, m, n - 1));
     }
 
 
@@ -79,8 +80,8 @@ public class DeleteOperationForTwoStrings{
         } else if(word1.charAt(m - 1) == word2.charAt(n - 1)){
             return 1 + calculateWithMemoization(word1, word2, m - 1, n - 1, memory);
         } else{
-            memory[m][n] = Math.max(calculateWithMemoization(word1, word2, m, n - 1, memory), calculateWithMemoization(word1, word2, m - 1, n,
-                    memory));
+            memory[m][n] = Math.max(calculateWithMemoization(word1, word2, m, n - 1, memory),
+                                    calculateWithMemoization(word1, word2, m - 1, n, memory));
         }
 
         return memory[m][n];
@@ -186,5 +187,6 @@ public class DeleteOperationForTwoStrings{
         assertEquals(2, minDistance("manu", "sanu"));
         assertEquals(2, minDistanceWithMemoization("manu", "sanu"));
         assertEquals(2, minDistanceDP("manu", "sanu"));
+        assertEquals(2, minDistanceDPv2("manu", "sanu"));
     }
 }
