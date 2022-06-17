@@ -111,7 +111,7 @@ public class DeleteOperationForTwoStrings{
      *     LCS upto the current indices also remains the same. But, which
      *     entry to pick up? Now, since the current character hasn't matched,
      *     we have got two options. We can remove the current character from consideration
-     *     from either s1s1s1 or s2s2s2 and use the corresponding dp entries given by
+     *     from either s1 or s2 and use the corresponding dp entries given by
      *     dp[i−1][j] and dp[i][j−1] respectively. Since we are considering the length of
      *     LCS upto the current indices we need to pick up the larger entry out
      *     of these two to update the current dp entry.-</li>

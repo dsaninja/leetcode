@@ -1,7 +1,11 @@
 package com.dsaninja.lc.dailychallenge;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.HashMap;
 import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * You are given an array of positive integers nums and want to
@@ -19,7 +23,7 @@ import java.util.Map;
  */
 public class MaximumErasureValue{
 
-    public static int max(int[] nums){
+    public int max(int[] nums){
         Map<Integer, Integer> freq = new HashMap<>();
         int[] prefixSum = new int[nums.length + 1];
 
@@ -57,6 +61,12 @@ public class MaximumErasureValue{
         }
 
         return max;
+    }
+
+    @Test
+    public void testMax(){
+        // The optimal subarray here is [2,4,5,6]
+        assertEquals(17, max(new int[]{4,2,4,5,6}));
     }
 
 
@@ -107,6 +117,12 @@ public class MaximumErasureValue{
 
         // return max
         return max;
+    }
+
+    @Test
+    public void testMaximumUniqueSubarray(){
+        // The optimal subarray here is [2,4,5,6]
+        assertEquals(17, maximumUniqueSubarray(new int[]{4,2,4,5,6}));
     }
 
 }

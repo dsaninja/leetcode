@@ -38,6 +38,7 @@ public class BinaryTreeCameras{
     // -1 : not monitored
     // 0 : monitored
     // 1 : has camera
+    // TC: O(n); SC: O(h) -> h is height
     private int dfs(TreeNode root){
         if(null == root){
             return 0;
@@ -53,7 +54,7 @@ public class BinaryTreeCameras{
             return 1;
         }
 
-        // if either of the children is monitored
+        // if either of the children has camera
         // return 0 to denote that current node is monitored
         if(l == 1 || r == 1){
             return 0;
