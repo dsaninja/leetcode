@@ -1,5 +1,6 @@
 package com.dsaninja.lc.easy;
 
+import com.dsaninja.lc.common.TreeNode;
 import com.sun.source.tree.Tree;
 import org.junit.jupiter.api.Test;
 
@@ -34,17 +35,6 @@ public class PathSum{
         return solve(root.left, localSum + root.val, target) ||
                 solve(root.right, localSum + root.val, target);
     }
-
-    private static final class TreeNode{
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int val){
-            this.val = val;
-        }
-    }
-
 
     @Test
     public void testPathSum(){

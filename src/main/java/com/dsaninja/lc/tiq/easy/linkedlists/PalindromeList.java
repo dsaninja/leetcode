@@ -1,10 +1,9 @@
 package com.dsaninja.lc.tiq.easy.linkedlists;
 
+import com.dsaninja.lc.common.ListNode;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
@@ -14,15 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * <a href="https://leetcode.com/problems/palindrome-linked-list/">Problem-234</a>
  */
 public class PalindromeList{
-
-    private static class ListNode{
-        int val;
-        ListNode next;
-
-        ListNode(int x){
-            this.val = x;
-        }
-    }
 
     ListNode front;
 

@@ -2,6 +2,7 @@ package com.dsaninja.lc.tiq.easy.linkedlists;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import com.dsaninja.lc.common.ListNode;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -13,15 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * <a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/">Problem-19</a>
  */
 public class RemoveNthNodeFromEnd {
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            this.val = x;
-        }
-    }
-
     public ListNode removeNthFromEnd(ListNode head, int n) {
         // the dummy node approach is specially useful for single node
         // no node or last node deletion scenarios

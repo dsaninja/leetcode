@@ -1,5 +1,7 @@
 package com.dsaninja.lc.recursionI;
 
+import com.dsaninja.lc.common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,16 +13,6 @@ import java.util.List;
  * <a href="https://leetcode.com/problems/unique-binary-search-trees-ii/">Problem-95</a>
  */
 public class UniqueBST{
-    private static class TreeNode{
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x){
-            val = x;
-        }
-    }
-
     public List<TreeNode> generate(int n){
         if(n == 0){
             return List.of();

@@ -1,5 +1,6 @@
 package com.dsaninja.lc.tiq.easy.linkedlists;
 
+import com.dsaninja.lc.common.ListNode;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -16,14 +17,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
  * <a href="https://leetcode.com/problems/merge-two-sorted-lists/">Problem-21</a>
  */
 public class MergeTwoSortedLists{
-    private static class ListNode{
-        int val;
-        ListNode next;
-
-        ListNode(int x){
-            this.val = x;
-        }
-    }
 
     public ListNode mergeTwoListsRec(ListNode list1, ListNode list2){
         if(null == list1){

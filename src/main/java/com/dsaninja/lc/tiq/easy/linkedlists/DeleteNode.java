@@ -1,5 +1,6 @@
 package com.dsaninja.lc.tiq.easy.linkedlists;
 
+import com.dsaninja.lc.common.ListNode;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -26,15 +27,6 @@ public class DeleteNode {
             node = node.next;
         }
         prev.next = null;
-    }
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            this.val = x;
-        }
     }
 
     @Test

@@ -1,5 +1,6 @@
 package com.dsaninja.lc.recursionI;
 
+import com.dsaninja.lc.common.ListNode;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -41,15 +42,5 @@ public class SwapNodesInPair{
        assertEquals(1, result.next.val);
        assertEquals(4, result.next.next.val);
        assertEquals(3, result.next.next.next.val);
-    }
-
-
-    public class ListNode{
-        int val;
-        ListNode next;
-
-        ListNode(int val){
-            this.val = val;
-        }
     }
 }

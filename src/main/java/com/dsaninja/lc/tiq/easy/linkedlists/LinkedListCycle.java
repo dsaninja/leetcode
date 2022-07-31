@@ -1,5 +1,6 @@
 package com.dsaninja.lc.tiq.easy.linkedlists;
 
+import com.dsaninja.lc.common.ListNode;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -21,14 +22,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * <a href="https://leetcode.com/problems/linked-list-cycle/">Problem-141</a>
  */
 public class LinkedListCycle{
-    private static class ListNode{
-        int val;
-        ListNode next;
-
-        ListNode(int x){
-            this.val = x;
-        }
-    }
 
     public boolean hasCycle(ListNode head){
         ListNode fast = head;

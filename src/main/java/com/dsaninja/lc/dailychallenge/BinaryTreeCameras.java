@@ -1,5 +1,7 @@
 package com.dsaninja.lc.dailychallenge;
 
+import com.dsaninja.lc.common.TreeNode;
+
 /**
  * You are given the root of a binary tree. We install cameras on
  * the tree nodes where each camera at a node can monitor its parent, itself, and
@@ -22,13 +24,6 @@ package com.dsaninja.lc.dailychallenge;
  * <a href="https://leetcode.com/problems/binary-tree-cameras/">Problem-968</a>
  */
 public class BinaryTreeCameras{
-
-    private static final class TreeNode{
-        int val;
-        TreeNode left;
-        TreeNode right;
-    }
-
     int cameras = 0;
 
     public int minCameraCover(TreeNode root){

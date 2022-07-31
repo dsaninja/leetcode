@@ -1,5 +1,7 @@
 package com.dsaninja.lc.dailychallenge;
 
+import com.dsaninja.lc.common.ListNode;
+
 /**
  * Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If the two linked lists have no
  * intersection at all, return null.
@@ -7,16 +9,6 @@ package com.dsaninja.lc.dailychallenge;
  * <a href="https://leetcode.com/problems/intersection-of-two-linked-lists/">Problem-160</a>
  */
 public class IntersectionOfTwoLinkedLists{
-
-    public class ListNode{
-        int val;
-        ListNode next;
-
-        ListNode(int x){
-            val = x;
-            next = null;
-        }
-    }
 
     /**
      * The same can be implemented by following steps:

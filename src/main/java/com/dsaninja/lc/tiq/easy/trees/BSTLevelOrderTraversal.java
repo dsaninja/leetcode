@@ -1,5 +1,6 @@
 package com.dsaninja.lc.tiq.easy.trees;
 
+import com.dsaninja.lc.common.TreeNode;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayDeque;
