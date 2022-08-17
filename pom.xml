@@ -10,9 +10,9 @@
 
 
     <properties>
-        <java.version>17</java.version>
+        <java.version>18</java.version>
         <maven.compiler>3.8.1</maven.compiler>
-        <junit5.version>5.8.2</junit5.version>
+        <junit5.version>5.9.0</junit5.version>
     </properties>
 
 
