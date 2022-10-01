@@ -5,14 +5,13 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.Comparator;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Given an array of meeting time intervals where intervals[i] = [starti, endi],
  * determine if a person could attend all meetings.
- *
+ * <p>
  * <a href="https://leetcode.com/problems/meeting-rooms/">Problem-252</a>
  */
 public class MeetingRooms{
