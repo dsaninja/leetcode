@@ -32,6 +32,8 @@ public class SubstringWithAllChars {
                 // if a substring x has at least one a, one b, and one c,
                 // then every possible longer substring with x as the start
                 // also has at least one a, one b, and one c.
+                // ex: for this "abcxyz" and i=2, 4 substring exist
+                // abc, abcx, abxy, abcxyz (6-2 = 4)
                 res += s.length() - i;
                 track[s.charAt(left++) - 'a']--;
             }
