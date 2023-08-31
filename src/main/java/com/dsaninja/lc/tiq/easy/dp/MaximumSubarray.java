@@ -26,5 +26,6 @@ public class MaximumSubarray {
     @Test
     public void testMaximumSubarray() {
         assertEquals(6, maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
+        assertEquals(23, maxSubArray(new int[]{5, 4, -1, 7, 8}));
     }
 }
